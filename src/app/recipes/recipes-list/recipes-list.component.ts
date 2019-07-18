@@ -11,7 +11,9 @@ export class RecipesListComponent implements OnInit {
   description:string="Test Description";  
   
   myrecipes:MyRecipe[] = [
+    new MyRecipe("Ice Cream Sandwiches",this.description,"https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2019/04/14111847/opener-alt_wide.jpg"),
     new MyRecipe("Ice Cream Sandwiches",this.description,"https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2019/04/14111847/opener-alt_wide.jpg")
+  
   ];  
   
   

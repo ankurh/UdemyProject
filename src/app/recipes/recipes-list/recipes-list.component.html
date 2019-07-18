@@ -6,11 +6,13 @@
     </div>
     
 </div>
+<hr>
 <div class="row">
     <div class="col-md-12" >
            
       <a href=""  class="list-group-item clearfix" *ngFor="let r of myrecipes">
         <div class="row">
+            
         <div class="pull-left col-md-8">
             
             <h4 class="list-group-item-heading">{{r.name}}</h4>
@@ -23,6 +25,7 @@
         </div>
     </div>
        </a>
+       <hr>
         <app-recipe-item></app-recipe-item>
     </div>
     
