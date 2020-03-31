@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { Recipe } from './recipes-list/recipe.model';
 
 @Component({
   selector: 'app-recipes',
@@ -11,5 +12,12 @@ export class RecipesComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+   clickedRec:Recipe;
 
+  onRecClick(clickedRecipe)
+  {
+    this.clickedRec = clickedRecipe;
+    
+  }
 }

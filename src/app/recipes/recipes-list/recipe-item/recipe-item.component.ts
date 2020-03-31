@@ -1,6 +1,4 @@
-import { MyRecipe } from '../myRecipe.model';
-
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -9,24 +7,11 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent implements OnInit {
-  description:string="Test Description";  
-  testing:Recipe[] = [];
-  myrecipes:MyRecipe[] = [
-    new MyRecipe("Ice Cream Sandwiches",this.description,"https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2019/04/14111847/opener-alt_wide.jpg")
-  ];  
+ 
+  @Input() recipes:Recipe;
   
   
-  constructor() {
-    console.log(new MyRecipe("Ice Cream Sandwiches",this.description,"https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2019/04/14111847/opener-alt_wide.jpg"))
-   }
-
-  ngOnInit() {
-  }
-
-  setData()
-  {
-
-
-  }
-
+ constructor()
+ {}
+ ngOnInit(){}
 }

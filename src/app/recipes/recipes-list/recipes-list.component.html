@@ -9,24 +9,11 @@
 <hr>
 <div class="row">
     <div class="col-md-12" >
-           
-      <a href=""  class="list-group-item clearfix" *ngFor="let r of myrecipes">
-        <div class="row">
-            
-        <div class="pull-left col-md-8">
-            
-            <h4 class="list-group-item-heading">{{r.name}}</h4>
-            <p class="list-group-item-text">
-                    {{r.description}}
-            </p>
-        </div>
-        <div class="pull-right">
-                <img class="img-responsive" style="max-height: 50px" src="{{r.imgPath}}" alt="">
-        </div>
-    </div>
-       </a>
-       <hr>
-        <app-recipe-item></app-recipe-item>
+        <app-recipe-item 
+            *ngFor="let recEL of myrecipes" 
+            [recipes]="recEL" (click)="showRecipe(recEL)">
+        </app-recipe-item>
+        
     </div>
     
 </div>

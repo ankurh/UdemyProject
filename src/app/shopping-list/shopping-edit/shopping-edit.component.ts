@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input,EventEmitter } from '@angular/core';
+import { Ingridents } from '../../shared/ingridents.model';
+
 
 @Component({
   selector: 'app-shopping-edit',
@@ -11,5 +13,13 @@ export class ShoppingEditComponent implements OnInit {
 
   ngOnInit() {
   }
+  @Output() items=new EventEmitter<Ingridents>();
+ ingredient:Ingridents;
+    addItem(n,q){
+      debugger;
+      const ing = new Ingridents(n,q);
+    this.items.emit(ing);
+   
 
+  }
 }

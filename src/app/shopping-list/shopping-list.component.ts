@@ -18,5 +18,9 @@ console.log(this.ingredients)
 
   ngOnInit() {
   }
-
+  onAdd(items:Ingridents)
+  {
+    debugger;
+    this.ingredients.push(items)
+  }
 }
