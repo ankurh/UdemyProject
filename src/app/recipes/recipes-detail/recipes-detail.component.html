@@ -11,29 +11,32 @@
   </div>
 
    <div class="row">
-      <div class="col-xs-12">
-          <div class="btn-group ">
-                  <button class="dropdown-toggle btn btn-primary">
-                    Manage <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">To Shopping List</a></li>
-                      <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
-                      <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
-                  </ul>
-            </div>
+      <div class="col-xs-9">
+          <p>{{recipe.description}}</p>
       </div>
+      <div class="col-xs-3"> 
+        <div class="btn-group"  appDropdown>
+                <button class="dropdown-toggle btn btn-primary" >
+                  Manage <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" >
+                    <li><a class="dropdown-item" href="#" (click)="addIngridents()">To Shopping List</a></li>
+                    <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
+                    <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
+                </ul>
+          </div>
+    </div>
+    
     </div> 
 
-    <div class="row">
-        <div class="col-xs-12">
-        <p>{{recipe.description}}</p>
-        </div>
-      </div>
-      <button (click)="loadData()" name="Load Data">Load</button>
+    <br/>
+      <!-- <button (click)="loadData()" name="Load Data">Load</button> -->
       <div class="row">
           <div class="col-xs-12">
-            <p>Ingridents</p>
-            {{item}} - {{qty}}
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let i of recipe.ingridents">
+                {{i.name}} - {{i.amount}}
+              </li>
+            </ul>
           </div>
         </div>

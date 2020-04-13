@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Ingridents } from '../../shared/ingridents.model';
-import { Recipe } from '../recipes-list/recipe.model';
+import { MyRecipe } from '../recipes-list/myRecipe.model';
+import { RecipeService } from '../recipeService/recipe.service';
 
 @Component({
   selector: 'app-recipes-detail',
@@ -11,18 +12,20 @@ export class RecipesDetailComponent implements OnInit {
 
   item:string="";
   qty:number=0;
-  constructor() { }
+  constructor(private rs:RecipeService) { }
   recipeIngridients:Ingridents;
   ngOnInit() {
     
   }
-  @Input() recipe:Recipe;
-  loadData(test)
+
+
+  @Input() recipe:MyRecipe;
+  
+  addIngridents()
   {
-    // this.item = this.recipeIngridients.name;
-    // this.qty = this.recipeIngridients.amount;
-    
+    this.rs.addIngridents(this.recipe.ingridents)
   }
+
 
   
 
